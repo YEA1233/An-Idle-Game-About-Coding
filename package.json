@@ -1,0 +1,34 @@
+{
+  "name": "an-idle-game-about-coding",
+  "version": "1.0.0",
+  "description": "An idle game about coding",
+  "main": "main.js", 
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.yourname.idlegame",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "YEA1233",
+        "repo": "An-Idle-Game-About-Coding"
+      }
+    ]
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "update-electron-app": "^2.0.1"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}

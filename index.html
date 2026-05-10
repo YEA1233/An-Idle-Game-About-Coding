@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Idle Game About Coding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>An Idle Game About Coding</h1>
+                    <p>Earn lines of code, hire automation, and upgrade your setup.</p>
+                </div>
+                <div class="settings-actions">
+                    <button id="settingsToggle" class="secondary-btn">Settings</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="settingsPanel" class="settings-panel hidden">
+            <h2>Settings</h2>
+            <div class="setting-row">
+                <label class="toggle-label">
+                    <input id="darkModeToggle" type="checkbox">
+                    Dark mode
+                </label>
+                <button id="fullscreenButton" class="small-btn">Enter Fullscreen</button>
+            </div>
+
+            <div class="setting-row">
+                <div class="save-controls">
+                    <label for="saveFileSelect">Choose save file:</label>
+                    <select id="saveFileSelect"></select>
+                </div>
+                <div class="save-actions">
+                    <button id="refreshSavesButton" class="small-btn">Refresh</button>
+                    <button id="loadSaveButton" class="small-btn">Load</button>
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <button id="manualSaveButton" class="small-btn">Save Now</button>
+                <button id="wipeSaveButton" class="small-btn danger-btn">Wipe Save</button>
+                <span class="hint">Saved files are stored in the app's <code>saves</code> folder.</span>
+            </div>
+
+            <div class="setting-row">
+                <label for="base64Text">Base64 export/import</label>
+                <textarea id="base64Text" placeholder="Paste Base64 here to import or export save data"></textarea>
+                <div class="settings-actions">
+                    <button id="exportBase64Button" class="small-btn">Export Base64</button>
+                    <button id="importBase64Button" class="small-btn">Import Base64</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <section class="shop-panel">
+                <h2>Buildings</h2>
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <div class="item-header">
+                            <span class="item-name">Junior Dev</span>
+                            <span class="item-cost">Cost: <span id="item-0-cost">10</span></span>
+                        </div>
+                        <p>Hire a junior developer to generate code automatically.</p>
+                        <div class="item-controls">
+                            <button data-item="0" class="buy-btn">Hire</button>
+                            <span><span id="item-0-owned">0</span> owned</span>
+                        </div>
+                    </div>
+
+                    <div class="shop-item">
+                        <div class="item-header">
+                            <span class="item-name">Code Assistant</span>
+                            <span class="item-cost">Cost: <span id="item-1-cost">100</span></span>
+                        </div>
+                        <p>Connect an assistant that boosts auto code production.</p>
+                        <div class="item-controls">
+                            <button data-item="1" class="buy-btn">Buy</button>
+                            <span><span id="item-1-owned">0</span> owned</span>
+                        </div>
+                    </div>
+
+                    <div class="shop-item">
+                        <div class="item-header">
+                            <span class="item-name">Build Tool</span>
+                            <span class="item-cost">Cost: <span id="item-2-cost">1000</span></span>
+                        </div>
+                        <p>Invest in a build tool to automate large amounts of code.</p>
+                        <div class="item-controls">
+                            <button data-item="2" class="buy-btn">Buy</button>
+                            <span><span id="item-2-owned">0</span> owned</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="upgrades-panel">
+                <h2>Upgrades</h2>
+                <div class="stats-inline">
+                    <div class="stat-card-inline">
+                        <div class="stat-label">Lines of Code</div>
+                        <div id="linesCount" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-card-inline">
+                        <div class="stat-label">Code Per Click</div>
+                        <div id="linesPerClick" class="stat-value">1</div>
+                    </div>
+                    <div class="stat-card-inline">
+                        <div class="stat-label">Code Per Second</div>
+                        <div id="cps" class="stat-value">0</div>
+                    </div>
+                </div>
+                <div class="upgrade-item">
+                    <div>
+                        <strong>Better Laptop</strong>
+                        <p>Increase code per click by +1.</p>
+                    </div>
+                    <div class="item-controls">
+                        <button id="buyUpgrade" class="buy-btn">Upgrade</button>
+                        <span>Cost: <span id="upgrade-cost">50</span></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="action-panel">
+                <button id="codeButton" class="primary-btn">Write Code</button>
+                <div id="message" class="message">Start building your codebase.</div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
